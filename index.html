@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoLab — AI Commercial Production</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: { DEFAULT: '#0a0f14', card: '#111820', subtle: '#1a232e' },
+                        accent: '#4eb4ff',
+                        muted: '#7a8b9d'
+                    },
+                    fontFamily: {
+                        display: ['Space Grotesk', 'sans-serif'],
+                        body: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Outfit', sans-serif; background: #0a0f14; }
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .grain { position: relative; }
+        .grain::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-item.open .faq-answer { max-height: 400px; }
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
+        .video-wrap { aspect-ratio: 16/9; background: #111820; }
+        .video-wrap iframe { width: 100%; height: 100%; }
+        ::selection { background: #4eb4ff; color: #0a0f14; }
+    </style>
+</head>
+<body class="text-gray-200 grain">
+    <!-- Nav -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-bg/80 backdrop-blur-lg">
+        <div class="max-w-5xl mx-auto px-5 py-4 flex justify-between items-center">
+            <a href="#" class="font-display font-bold text-xl tracking-tight">VideoLab</a>
+            <a href="#contact" class="text-sm font-medium px-5 py-2.5 bg-accent text-bg rounded-lg hover:bg-accent/90 transition-colors">Get in touch</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-28 pb-16 px-5 md:pt-36 md:pb-24">
+        <div class="max-w-3xl mx-auto">
+            <p class="font-mono text-xs uppercase tracking-widest text-accent mb-5">AI-powered video production</p>
+            <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 text-white">We make commercials.<br/>With AI.</h1>
+            <p class="text-lg md:text-xl text-muted max-w-xl mb-10 leading-relaxed">Scroll-stopping video ads, produced faster and cheaper than traditional methods. Human creativity meets AI efficiency.</p>
+            <div class="flex flex-wrap gap-3">
+                <a href="#contact" class="px-6 py-3 bg-accent text-bg font-semibold rounded-lg hover:bg-accent/90 transition-colors">Start a project</a>
+                <a href="#work" class="px-6 py-3 border border-white/10 text-gray-300 rounded-lg hover:border-white/20 hover:bg-white/5 transition-all">See examples ↓</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What -->
+    <section class="py-16 px-5 border-t border-white/5">
+        <div class="max-w-3xl mx-auto">
+            <p class="font-mono text-xs uppercase tracking-widest text-muted mb-4">What we do</p>
+            <h2 class="font-display text-2xl md:text-3xl font-semibold text-white mb-6">AI video production, explained.</h2>
+            <div class="space-y-4 text-muted leading-relaxed">
+                <p>We use tools like <span class="text-gray-300">Runway, Kling, Pika, and Midjourney</span> to generate footage, motion, and effects that would traditionally require expensive shoots, crews, and post-production.</p>
+                <p>You get cinematic quality at a fraction of the cost. We handle the technical AI work — you get a polished commercial ready to run.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why -->
+    <section class="py-16 px-5 bg-card">
+        <div class="max-w-5xl mx-auto">
+            <div class="max-w-3xl mb-12">
+                <p class="font-mono text-xs uppercase tracking-widest text-muted mb-4">Why it works</p>
+                <h2 class="font-display text-2xl md:text-3xl font-semibold text-white">Traditional production is broken.</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-x-12 gap-y-10">
+                <div class="border-l-2 border-accent/50 pl-5">
+                    <h3 class="font-display font-semibold text-white text-lg mb-2">10x faster</h3>
+                    <p class="text-muted text-sm leading-relaxed">Traditional video takes 6-8 weeks. We deliver in 1-2. AI accelerates every phase without cutting corners.</p>
+                </div>
+                <div class="border-l-2 border-white/10 pl-5">
+                    <h3 class="font-display font-semibold text-white text-lg mb-2">Fraction of the cost</h3>
+                    <p class="text-muted text-sm leading-relaxed">No crews, no location fees, no talent buyouts. Professional results without the traditional overhead.</p>
+                </div>
+                <div class="border-l-2 border-white/10 pl-5">
+                    <h3 class="font-display font-semibold text-white text-lg mb-2">Iterate freely</h3>
+                    <p class="text-muted text-sm leading-relaxed">Test 5 hooks. Try 10 angles. With AI, variations are cheap. Find what works, scale it.</p>
+                </div>
+                <div class="border-l-2 border-white/10 pl-5">
+                    <h3 class="font-display font-semibold text-white text-lg mb-2">Creative freedom</h3>
+                    <p class="text-muted text-sm leading-relaxed">Fantasy environments, impossible camera moves, surreal visuals. AI removes physical production limits.</p>
+                </div>
+                <div class="border-l-2 border-white/10 pl-5">
+                    <h3 class="font-display font-semibold text-white text-lg mb-2">You own everything</h3>
+                    <p class="text-muted text-sm leading-relaxed">No licensing fees. No usage restrictions. Full ownership of all deliverables, forever.</p>
+                </div>
+                <div class="border-l-2 border-white/10 pl-5">
+                    <h3 class="font-display font-semibold text-white text-lg mb-2">Humans in the loop</h3>
+                    <p class="text-muted text-sm leading-relaxed">AI is the engine, we're the drivers. Strategy, storytelling, and QC stay human.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="py-16 px-5 border-t border-white/5">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-4">
+                <div>
+                    <p class="font-mono text-xs uppercase tracking-widest text-muted mb-4">Work</p>
+                    <h2 class="font-display text-2xl md:text-3xl font-semibold text-white">Recent projects.</h2>
+                </div>
+                <a href="#contact" class="text-accent text-sm hover:underline">Want something like this? →</a>
+            </div>
+            <div class="grid md:grid-cols-3 gap-5">
+                <div>
+                    <div class="video-wrap rounded-lg overflow-hidden mb-3"><iframe src="https://www.youtube.com/embed/xPJbVgvdwdk" frameborder="0" allowfullscreen></iframe></div>
+                    <p class="font-medium text-white text-sm">Dentist Office TV Ad</p>
+                    <p class="text-muted text-xs">Local business ad</p>
+                </div>
+                <div>
+                    <div class="video-wrap rounded-lg overflow-hidden mb-3"><iframe src="https://www.youtube.com/embed/Ph33XOgZOHY" frameborder="0" allowfullscreen></iframe></div>
+                    <p class="font-medium text-white text-sm">Contractor TV Ad</p>
+                    <p class="text-muted text-xs">Service business ad</p>
+                </div>
+                <div>
+                    <div class="video-wrap rounded-lg overflow-hidden mb-3"><iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe></div>
+                    <p class="font-medium text-white text-sm">Project Three</p>
+                    <p class="text-muted text-xs">Social ad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-16 px-5 bg-card border-y border-white/5">
+        <div class="max-w-3xl mx-auto">
+            <p class="font-mono text-xs uppercase tracking-widest text-muted mb-4">Process</p>
+            <h2 class="font-display text-2xl md:text-3xl font-semibold text-white mb-10">How it works.</h2>
+            <div class="space-y-8">
+                <div class="flex gap-5">
+                    <div class="font-mono text-accent text-sm pt-1">01</div>
+                    <div>
+                        <h3 class="font-display font-semibold text-white mb-1">Discovery</h3>
+                        <p class="text-muted text-sm leading-relaxed">Quick call to understand your goals, audience, and creative direction. We'll tell you if AI video is the right fit.</p>
+                    </div>
+                </div>
+                <div class="flex gap-5">
+                    <div class="font-mono text-accent text-sm pt-1">02</div>
+                    <div>
+                        <h3 class="font-display font-semibold text-white mb-1">Creative brief</h3>
+                        <p class="text-muted text-sm leading-relaxed">We develop concepts, scripts, and visual direction tailored to your brand. You approve before we build.</p>
+                    </div>
+                </div>
+                <div class="flex gap-5">
+                    <div class="font-mono text-accent text-sm pt-1">03</div>
+                    <div>
+                        <h3 class="font-display font-semibold text-white mb-1">Production</h3>
+                        <p class="text-muted text-sm leading-relaxed">Our team brings it to life using the latest AI tools, with human oversight at every step.</p>
+                    </div>
+                </div>
+                <div class="flex gap-5">
+                    <div class="font-mono text-accent text-sm pt-1">04</div>
+                    <div>
+                        <h3 class="font-display font-semibold text-white mb-1">Delivery</h3>
+                        <p class="text-muted text-sm leading-relaxed">Polished files optimized for your platforms. Ready to run ads.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 px-5">
+        <div class="max-w-3xl mx-auto">
+            <p class="font-mono text-xs uppercase tracking-widest text-muted mb-4">FAQ</p>
+            <h2 class="font-display text-2xl md:text-3xl font-semibold text-white mb-8">Common questions.</h2>
+            <div class="space-y-2">
+                
+                <div class="faq-item border border-white/5 rounded-lg">
+                    <button class="w-full flex justify-between items-center px-5 py-4 text-left" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="font-medium text-white text-sm">How is this different from using Midjourney or Runway myself?</span>
+                        <svg class="faq-chevron w-4 h-4 text-muted transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 pb-4"><p class="text-muted text-sm leading-relaxed">AI tools generate visuals, but professional video requires strategic direction, brand consistency, and technical expertise. DIY approaches typically involve 20+ hours learning prompting, inconsistent outputs, and complex editing workflows. Our team has invested thousands of hours mastering these tools — understanding when AI accelerates production and when human judgment is essential. You receive polished, on-brand content without the learning curve or production delays.</p></div>
+                </div>
+
+                <div class="faq-item border border-white/5 rounded-lg">
+                    <button class="w-full flex justify-between items-center px-5 py-4 text-left" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="font-medium text-white text-sm">What types of videos do you create?</span>
+                        <svg class="faq-chevron w-4 h-4 text-muted transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 pb-4"><p class="text-muted text-sm leading-relaxed">Short-form video ads (under 60 seconds) for social platforms — Meta, TikTok, YouTube Shorts, LinkedIn. Product spots, brand teasers, scroll-stopping hooks. AI excels at eye-catching visuals that would cost a fortune to shoot: dramatic product reveals, stylized environments, motion graphics with personality.</p></div>
+                </div>
+
+                <div class="faq-item border border-white/5 rounded-lg">
+                    <button class="w-full flex justify-between items-center px-5 py-4 text-left" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="font-medium text-white text-sm">Will AI-generated video actually match my brand?</span>
+                        <svg class="faq-chevron w-4 h-4 text-muted transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 pb-4"><p class="text-muted text-sm leading-relaxed">This is where professional direction makes the difference. Raw AI output looks generic. We take your brand guidelines (colors, fonts, tone, reference videos) and bake them into every frame. Custom color grading, consistent visual style, on-brand messaging. The AI generates; we art-direct. Result: videos that look like <em>yours</em>, not like a tech demo.</p></div>
+                </div>
+
+                <div class="faq-item border border-white/5 rounded-lg">
+                    <button class="w-full flex justify-between items-center px-5 py-4 text-left" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="font-medium text-white text-sm">What parts are AI vs. human?</span>
+                        <svg class="faq-chevron w-4 h-4 text-muted transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 pb-4"><p class="text-muted text-sm leading-relaxed"><strong>AI handles:</strong> Image generation, video synthesis, motion, some effects. <strong>Humans handle:</strong> Strategy, scripting, creative direction, prompt engineering, curation (picking the best outputs from dozens of generations), editing, color grading, audio, final polish. AI serves as a powerful production tool that requires skilled creative direction. We provide that direction.</p></div>
+                </div>
+
+                <div class="faq-item border border-white/5 rounded-lg">
+                    <button class="w-full flex justify-between items-center px-5 py-4 text-left" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="font-medium text-white text-sm">How fast can I get a finished video?</span>
+                        <svg class="faq-chevron w-4 h-4 text-muted transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 pb-4"><p class="text-muted text-sm leading-relaxed">Most projects: 1-2 weeks from brief to final delivery. Compare that to 6-8 weeks (and 5-10x the cost) for traditional production. Expedited timelines are available for time-sensitive projects.</p></div>
+                </div>
+
+                <div class="faq-item border border-white/5 rounded-lg">
+                    <button class="w-full flex justify-between items-center px-5 py-4 text-left" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="font-medium text-white text-sm">What if I need revisions?</span>
+                        <svg class="faq-chevron w-4 h-4 text-muted transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 pb-4"><p class="text-muted text-sm leading-relaxed">Revisions are included — one of AI production's key advantages. Need a different color? A new angle? Want to test a different hook? Changes that would cost thousands in reshoots are trivial here. We refine until the final product meets your standards.</p></div>
+                </div>
+
+                <div class="faq-item border border-white/5 rounded-lg">
+                    <button class="w-full flex justify-between items-center px-5 py-4 text-left" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="font-medium text-white text-sm">Can you blend AI with real footage?</span>
+                        <svg class="faq-chevron w-4 h-4 text-muted transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 pb-4"><p class="text-muted text-sm leading-relaxed">Yes. If you have existing footage, product photos, or UGC clips, we can enhance them with AI — adding environments, effects, or extending scenes. Hybrid is often the sweet spot: real product shots + AI-generated context around them.</p></div>
+                </div>
+
+                <div class="faq-item border border-white/5 rounded-lg">
+                    <button class="w-full flex justify-between items-center px-5 py-4 text-left" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="font-medium text-white text-sm">What industries work best for AI video?</span>
+                        <svg class="faq-chevron w-4 h-4 text-muted transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 pb-4"><p class="text-muted text-sm leading-relaxed">E-commerce, DTC brands, SaaS, apps, consumer products — anyone running paid social who needs volume and variety. AI shines when you need eye-catching visuals fast: product launches, seasonal campaigns, A/B testing creative. Less ideal for industries requiring real human faces or documentary-style authenticity (though that's changing fast).</p></div>
+                </div>
+
+                <div class="faq-item border border-white/5 rounded-lg">
+                    <button class="w-full flex justify-between items-center px-5 py-4 text-left" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="font-medium text-white text-sm">What don't you do?</span>
+                        <svg class="faq-chevron w-4 h-4 text-muted transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 pb-4"><p class="text-muted text-sm leading-relaxed">We keep it focused: <strong>short-form only</strong> (under 60 seconds) and <strong>no live-action shoots</strong>. We don't do long-form content, talking-head videos, or anything requiring on-location production. That's traditional video territory — and if that's what you need, we'll tell you honestly.</p></div>
+                </div>
+
+                <div class="faq-item border border-white/5 rounded-lg">
+                    <button class="w-full flex justify-between items-center px-5 py-4 text-left" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="font-medium text-white text-sm">Is this legal and ethical?</span>
+                        <svg class="faq-chevron w-4 h-4 text-muted transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 pb-4"><p class="text-muted text-sm leading-relaxed">100%. We use commercially licensed AI tools and follow all platform guidelines. No deepfakes, no impersonating real people, no misleading content. Just creative production with new tools.</p></div>
+                </div>
+
+                <div class="faq-item border border-white/5 rounded-lg">
+                    <button class="w-full flex justify-between items-center px-5 py-4 text-left" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="font-medium text-white text-sm">Do I own the final videos?</span>
+                        <svg class="faq-chevron w-4 h-4 text-muted transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-5 pb-4"><p class="text-muted text-sm leading-relaxed">Yes. Full ownership, full usage rights, no licensing fees. Run them wherever you want, forever.</p></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 px-5 bg-card border-t border-white/5">
+        <div class="max-w-xl mx-auto">
+            <p class="font-mono text-xs uppercase tracking-widest text-muted mb-4">Contact</p>
+            <h2 class="font-display text-2xl md:text-3xl font-semibold text-white mb-3">Let's talk.</h2>
+            <p class="text-muted mb-8">Tell us about your project. We'll get back within 24 hours with ideas and a quote.</p>
+            <form class="space-y-4" onsubmit="alert('Thanks! We\'ll be in touch soon.');return false">
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <input type="text" placeholder="Name" required class="w-full px-4 py-3 bg-bg border border-white/10 rounded-lg text-gray-200 placeholder-gray-500 focus:border-accent focus:outline-none text-sm">
+                    <input type="email" placeholder="Email" required class="w-full px-4 py-3 bg-bg border border-white/10 rounded-lg text-gray-200 placeholder-gray-500 focus:border-accent focus:outline-none text-sm">
+                </div>
+                <input type="text" placeholder="Company (optional)" class="w-full px-4 py-3 bg-bg border border-white/10 rounded-lg text-gray-200 placeholder-gray-500 focus:border-accent focus:outline-none text-sm">
+                <textarea placeholder="Tell us about your project — what you're selling, where you'll run ads, timeline if you have one..." rows="4" required class="w-full px-4 py-3 bg-bg border border-white/10 rounded-lg text-gray-200 placeholder-gray-500 focus:border-accent focus:outline-none resize-none text-sm"></textarea>
+                <button type="submit" class="w-full py-3 bg-accent text-bg font-semibold rounded-lg hover:bg-accent/90 transition-colors text-sm">Send message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-5 border-t border-white/5">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted">
+            <span class="font-display font-medium text-white">VideoLab</span>
+            <span>© 2025. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+            e.preventDefault();
+            document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+        }));
+    </script>
+</body>
+</html>
